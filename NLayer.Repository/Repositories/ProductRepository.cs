@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Repositories;
 
