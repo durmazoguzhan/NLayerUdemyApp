@@ -20,6 +20,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateDtoValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<CategoryCreateDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductUpdateDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CategoryUpdateDtoValidator>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
