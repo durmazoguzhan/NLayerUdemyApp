@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using NLayer.API.Filters;
 using NLayer.Core.DTOs;
 using NLayer.Core.Entities;
 using NLayer.Core.Services;
@@ -32,6 +33,7 @@ namespace NLayer.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _service.GetByIdAsync(id);
@@ -58,6 +60,7 @@ namespace NLayer.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _service.GetByIdAsync(id);
